@@ -17,7 +17,7 @@ form表单不能直接得到请求返回的数据，所以只能通过B页面来
 ```
 cd ./CROSSDOMAIN
 npm install
-cd ./jsonp-form   
+cd ./3-jsonp-form   
 node static_server.js   //启动静态服务器
 cd  ./server  
 node app.js  //启动要跨域的服务器

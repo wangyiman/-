@@ -5,7 +5,7 @@
 ```
 cd ./CROSSDOMAIN
 npm install
-cd ./jsonp-basic   
+cd ./1-jsonp-basic   
 node static_server.js   //启动静态服务器1
 cd  ./server  
 node static_server.js  //启动静态服务器2

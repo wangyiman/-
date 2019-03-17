@@ -6,7 +6,7 @@
 ```
 cd ./CROSSDOMAIN
 npm install
-cd ./jsonp-addscript   
+cd ./2-jsonp-addscript   
 node static_server.js   //启动静态服务器1
 cd  ./server  
 node app.js  //启动请求数据的服务器
