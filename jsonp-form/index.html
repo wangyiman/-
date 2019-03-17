@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            function callBack(data) {
+                console.log('我是接收到的数据', data);
+            }
+    </script>
+    <script>
+      window.onload = () => {
+          if(top === self) return;
+          let fn = '';
+          let args;
+          let arr = location.search.substr(1).split('&');
+          for(let i = 0;i < arr.length;i++) {
+              item = arr[i].split('=');
+              if(item[0] === 'callBack') {
+                  fn = item[1];
+              } else if(item[0] === 'data') {
+                args = item[1];
+              }
+          }
+          try {
+              eval(fn + '(args)');
+          } catch (err) {
+              console.log('我出错啦');
+          }
+      }
+  </script>
+</head>
+<body>
+    <iframe name='handledata' id='handledata' src="" frameborder="0">
+    </iframe>
+    <form class='' action='http://localhost:3001/' method='post' target="handledata">
+        <input type="text" name='callBack' value='callBack'/>
+        <input type="text" name='url' value='http://localhost:3000/index.html'>
+        <input type="submit" value='提交'/>
+    </form>
+</body>
+</html>
