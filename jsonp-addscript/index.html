@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function getName(name) {
+      document.querySelector('.container').innerHTML = '我是从远程服务器获取到的姓名:' + name;
+    }
+  </script>
+  <script>
+    window.onload = () => {
+      let element = document.createElement('script');
+      element.src = 'http://localhost:3006?func=getName';
+      document.getElementsByTagName('head')[0].appendChild(element);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+
+  </div>
+</body>
+</html>

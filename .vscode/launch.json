@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/jsonp-form/server/app"
+      "program": "${workspaceFolder}/jsonp-addscript/server/app"
     },
     {
       "type": "node",
