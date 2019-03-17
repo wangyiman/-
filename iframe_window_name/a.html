@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        let iframe = document.createElement('iframe');
+        iframe.src = 'http://localhost:3001/b.html';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+        let isfirst = true;
+        function loadFunc() {
+            if(isfirst) {
+              iframe.src = 'http://localhost:3000/';
+              isfirst = false;
+            } else {
+              let result = iframe.contentWindow.name;
+              document.querySelector('.container').innerHTML = result;
+              document.body.removeChild(iframe);
+            }
+        }
+
+        iframe.onload = loadFunc;
+      }
+    </script>
+</head>
+<body>
+    <div class='container'>
+
+    </div>
+</body>
+</html>

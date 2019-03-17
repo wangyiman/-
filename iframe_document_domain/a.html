@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        document.domain = 'http://localhost:3000/'
+        let iframe = document.querySelector('b_iframe');
+        function loadFunc() {
+            
+        }
+
+        iframe.onload = loadFunc;
+      }
+    </script>
+</head>
+<body>
+    <iframe src="http://localhost:3001/b.html" id='b_iframe' frameborder="0"></iframe>
+    <div class='container'>
+
+    </div>
+</body>
+</html>

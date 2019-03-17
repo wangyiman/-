@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      function receiveMessage(event) {
+        if (event.origin !== 'http://localhost:3000') {
+            return false
+        }
+        console.log('a传给我的消息是:', event.data);
+        window.parent.postMessage('我收到你的请求数据的信息啦,名字是蜡笔小新', '*');
+      }
+
+      window.addEventListener('message', receiveMessage, false);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

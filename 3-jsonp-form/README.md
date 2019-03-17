@@ -1,9 +1,9 @@
-JSONP 代理模式实现跨域
+代理模式实现跨域
 ========
 
 form + iframe + POST请求
 
-## form表单实现代理模式跨域可以实现post请求
+## form表单实现代理模式跨域
 3000端口请求服务器3001的数据，通过服务器3001的重定向，在3000端口中的iframe中接收服务器返回的数据
 并执行之前在3000端口中定义的方法。
 
@@ -19,6 +19,6 @@ cd ./CROSSDOMAIN
 npm install
 cd ./3-jsonp-form   
 node static_server.js   //启动静态服务器
-cd  ./server  
+cd  ./server
 node app.js  //启动要跨域的服务器
 ```

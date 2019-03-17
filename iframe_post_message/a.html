@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+          window.onload = () => {
+            let iframe = document.getElementById('childframe').contentWindow;
+            function postM() {
+              iframe.postMessage('我是A，我想要你的名字', '*');              
+            }
+            
+            function receiveMessage(event) {
+              document.querySelector('.container').innerHTML = event.data;
+            }
+            window.addEventListener('message', receiveMessage, false);
+            document.getElementById('btn').addEventListener('click', postM, false);
+          }
+    </script>
+</head>
+<body>
+    <iframe src="http://localhost:3001/b.html" id='childframe' frameborder="0"></iframe>
+    <div class='container'>
+    </div>
+    <button id='btn'>点击我</button>
+</body>
+</html>
