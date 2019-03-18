@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+          window.onload = () => {
+            let iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:3001/b.html#getName'
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            this.timer = setInterval(() => {
+              if(location.hash) {
+                let data = location.hash.substr(1);
+                let finalData = decodeURI(data);
+                let finalData2 = decodeURIComponent(data);
+                let finalData3 = unescape(data);
+                document.querySelector('.container').innerHTML = finalData;
+                document.querySelector('.container2').innerHTML = finalData2;
+                document.querySelector('.container3').innerHTML = finalData3;
+                clearInterval(this.timer);
+              }
+            },1000);
+          }
+    </script>
+</head>
+<body>
+    <div class='container'>
+    </div>
+    <div class='container2'>
+    </div>
+    <div class='container3'>
+    </div>
+    <button id='btn'>点击我</button>
+</body>
+</html>
